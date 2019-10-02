@@ -5,5 +5,5 @@
 		"body": [
 			"const ${1:elment} = $('#${1:elment}');"
 		]
-	},
+	}
 }
