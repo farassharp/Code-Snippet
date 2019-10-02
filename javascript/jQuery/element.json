@@ -1,9 +1,28 @@
 {
-    "$prop":{
+	"$prop": {
 		"prefix": "$prop",
 		"description": "A new element html for JQuery.",
 		"body": [
 			"const ${1:elment} = $('#${1:elment}');"
 		]
-	}
+	},
+	"peticionAjax": {
+		"prefix": "ajax",
+		"description": "Crea una estructura para lanzar una petición AJAX asíncrona.",
+		"body": [
+			"$.${1:método}('${2:url}', { ${3:data} })",
+			"\t.then(response => {",
+			"\t\tif (response.success) {",
+			"\t\t\t// Operación exitosa.",
+			"\t\t} else {",
+			"\t\t\t// Operación no completada.",
+			"\t\t\tAlertaGeneral(`Operación fallida`, `No se pudo completar la operación: ${response.message}`);",
+			"\t\t}",
+			"\t}, error => {",
+			"\t\t// Error al lanzar la petición.",
+			"\t\tAlertaGeneral(`Operación fallida`, `Ocurrió un error al lanzar la petición al servidor: Error ${error.status} - ${error.statusText}.`);",
+			"\t}",
+			"\t);"
+		]
+	},
 }
