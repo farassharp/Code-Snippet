@@ -1,0 +1,9 @@
+{
+    "$prop":{
+		"prefix": "$prop",
+		"description": "A new element html for JQuery.",
+		"body": [
+			"const ${1:elment} = $('#${1:elment}');"
+		]
+	},
+}
