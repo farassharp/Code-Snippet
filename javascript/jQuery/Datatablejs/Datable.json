@@ -1,0 +1,53 @@
+{
+    "dtIni":{
+		"prefix": "dtIni",
+		"description": "Function conf  for datatable",
+		"body": [
+			"function initDataTbl${1:name}() {",
+				"\tdt${1:name} = tbl${1:name}.DataTable({",
+					"\t\tdestroy: true,",
+					"\t\tcolumns: [",
+					"\t\t\t${2}",
+					"\t\t],",
+					"\t\tinitComplete: function (settings, json) {",
+					"\t\t}",
+				"\t});",
+			"}"
+		]
+    },
+    "dtProp":{
+		"prefix": "dtProp",
+		"description": "Property datatable.",
+		"body": [
+			",{ data: '${1:property}'}"
+		]
+	},
+	"dtPropInput":{
+		"prefix": "dtPropInput",
+		"description": "Property input datatable.",
+		"body": [
+			",{",
+				"\tdata: '${1:property}' ,createdCell: function (td, data, rowData, row, col) {",
+					"\t\t$(td).html(`<input>`);",
+					"\t\t$(td).find(`input`).addClass(`form-control`);",
+					"\t\t$(td).find(`input`).val(data);",
+				"\t}",
+			"}"
+		]
+	},
+	"dtPropRender":{
+		"prefix": "dtPropRender",
+		"description": "Property datatable whith render function.",
+		"body": [
+			",{ data:'${1:property}' ,render: (data, type, row, meta) => `${2:response}`},"
+		]
+	},
+	"dtEvent":{
+		"prefix": "dtEvent",
+		"description": "event handler datatable.",
+		"body": [
+			"${1:table}.on('${2:event}', '${3:selector}', function (event) {",				
+			"});"
+		]
+	}
+}
